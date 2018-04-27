@@ -60,11 +60,9 @@ try {
     $b = Granatum::bancos($conn);
     $resp = $b->all();
     if ($resp === 'false') {
-        if (!$resp) {
-            echo "Fracasso. Falhou !";
-        } else {
-            echo "Sucesso!!";
-        }
+        echo "Falhou ...";
+    } elseif ($resp === 'true') {
+        echo "Operação realizada com Sucesso!!";
     } else {
         echo "<pre>";
         print_r($resp);
