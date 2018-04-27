@@ -17,28 +17,33 @@ Biblioteca PHP com classes auxiliares para integração com Granatum Financeiro
  - Fornecedores *(Listagem, Inclusão, Alteração, Deleção)*
  - Lançamentos *(Listagem, Inclusão, Alteração, Deleção)*
 
-
 ## Créditos
 
 Estas classes foram desenvolvidas com base no repositório das classes criadas por Lucas Nunes Pinto Pinheiro.
 
 [lucasnpinheiro/granatum](https://github.com/lucasnpinheiro/granatum) Ao qual agradeço muito a disponibilização livre de suas classes de integração.
 
-
 ## Instalação
 
 composer install robmachado/apigranatum
+
+## Dependências
+
+- "php" : ">=7.0",
+- "ext-curl": "*",
+- "ext-json": "*",
+- "curl/curl": "^1.8"
 
 ## Formas de uso
 
 - Instanciar Connector::class (faz a comunicação usando Curl\Curl)
 - Carregar a classe desejada usando Granatum::class
-- Estabelecer o método desejado (all(), get(), edit(), add(), ou delete())
-- Passar os parâmetros estabeleecidos pela API (e pela operação)
+- Estabelecer o método desejado all(), get(), edit(), add(), ou delete()
+- Passar os parâmetros estabelecidos pela API (e pela operação)
 - O retorno sempre será uma string (json) ou um booleano
 - Em caso de erros será retornado uma \Exception
 
-### Bancos
+### Exemplo de uso
 
 ```php
 use ApiGranatum\Granatum;
@@ -67,7 +72,6 @@ try {
     echo $e->getMessage();
 }
 ```
-
 
 **MIT License**
 
