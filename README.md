@@ -20,11 +20,53 @@ Biblioteca PHP com classes auxiliares para integração com Granatum Financeiro
 
 ## Créditos
 
-Estas classes foram desenvolvidas com base no repositório das classes crias por Lucas Nunes Pinto Pinheiro.
+Estas classes foram desenvolvidas com base no repositório das classes criadas por Lucas Nunes Pinto Pinheiro.
 
-[lucasnpinheiro/granatum](https://github.com/lucasnpinheiro/granatum)
+[lucasnpinheiro/granatum](https://github.com/lucasnpinheiro/granatum) Ao qual agradeço muito a disponibilização livre de suas classes de integração.
 
-Ao qual agradeço muito a disponibilização livre de suas classes de integração.
+
+## Instalação
+
+composer install robmachado/apigranatum
+
+## Formas de uso
+
+- Instanciar Connector::class (faz a comunicação usando Curl\Curl)
+- Carregar a classe desejada usando Granatum::class
+- Estabelecer o método desejado (all(), get(), edit(), add(), ou delete())
+- Passar os parâmetros estabeleecidos pela API (e pela operação)
+- O retorno sempre será uma string (json) ou um booleano
+- Em caso de erros será retornado uma \Exception
+
+### Bancos
+
+```php
+use ApiGranatum\Granatum;
+use ApiGranatum\Connector;
+
+$token = 'lkjd786487648746jhjhe989389syhhhwuh9837398739hdskh';
+$version = 'v1';
+$uri = 'https://api.granatum.com.br';
+
+try {
+    $conn = new Connector($token, $version, $uri);
+    $b = Granatum::bancos($conn);
+    $resp = $b->all();
+    if (is_bool($resp)) {
+        if (!$resp) {
+            echo "Fracasso. Falhou !";
+        } else {
+            echo "Sucesso!!";
+        }
+    } else {
+        echo "<pre>";
+        print_r($resp);
+        echo "</pre>";
+    }
+} catch (\Exception $e) {
+    echo $e->getMessage();
+}
+```
 
 
 **MIT License**
