@@ -45,10 +45,10 @@ class Estados extends Factory implements FactoryInterface
      * Remove $this->path  by id
      * NOTE: do not exists this method
      * @param int $id
-     * @return bool
+     * @return string
      */
-    public function delete(int $id):bool
+    public function delete(int $id):string
     {
-        return false;
+        return "false";
     }
 }

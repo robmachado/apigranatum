@@ -30,9 +30,10 @@ class Factory implements FactoryInterface
     
     /**
      * Retrive all $this->path
+     * @param array $dados
      * @return string
      */
-    public function all(array $dados = null):string
+    public function all(array $dados = []):string
     {
         return $this->conn->get($this->path, $dados);
     }
@@ -70,9 +71,9 @@ class Factory implements FactoryInterface
     /**
      * Remove $this->path  by id
      * @param int $id
-     * @return bool
+     * @return string
      */
-    public function delete(int $id):bool
+    public function delete(int $id):string
     {
         return $this->conn->delete($this->path . '/' . $id);
     }
