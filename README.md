@@ -25,7 +25,9 @@ Estas classes foram desenvolvidas com base no repositório das classes criadas p
 
 ## Instalação
 
+```
 composer require robmachado/apigranatum
+```
 
 ## Dependências
 
