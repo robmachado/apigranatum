@@ -59,7 +59,7 @@ try {
     $conn = new Connector($token, $version, $uri);
     $b = Granatum::bancos($conn);
     $resp = $b->all();
-    if (is_bool($resp)) {
+    if ($resp === 'false') {
         if (!$resp) {
             echo "Fracasso. Falhou !";
         } else {
