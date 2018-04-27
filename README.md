@@ -1,30 +1,29 @@
-Granatum
+# ApiGranatum
 
-Biblioteca PHP para integração com Granatum usando Curl
+Biblioteca PHP com classes auxiliares para integração com Granatum Financeiro
 
-Inclui as funcionalidades
--------------------------
+> ## [Granatum](http://www.granatum.com.br) é um aplicativo WEB para gestão financeira de excelente qualidade
+> Sua API (Restful) fornece várias funcionalidades que são acessadas por estas classes.  
 
- - Bancos
- - Categorias
- - Centros Custo Lucro
- - Cidades
- - Clientes
- - Cobranças
- - Contas
- - Estados
- - Formas
- - Pagamentos
- - Fornecedores
- - Lançamentos
+ - Bancos *(Listagem)*
+ - Categorias *(Listagem, Inclusão, Alteração, Deleção)*
+ - Centros Custo Lucro *(Listagem, Inclusão, Alteração, Deleção)*
+ - Cidades *(Listagem)*
+ - Clientes *(Listagem, Inclusão, Alteração, Deleção)*
+ - Cobranças *(Listagem, Inclusão, Alteração, Deleção)*
+ - Contas *(Listagem, Inclusão, Alteração, Deleção)*
+ - Estados *(Listagem)*
+ - Formas de Pagamentos *(Listagem, Inclusão, Alteração, Deleção)*
+ - Fornecedores *(Listagem, Inclusão, Alteração, Deleção)*
+ - Lançamentos *(Listagem, Inclusão, Alteração, Deleção)*
 
 
-----------
+
 
 
 **MIT License**
 
-Copyright (c) 2017 Lucas Nunes Pinto Pinheiro
+Copyright (c) 2018 Roberto Leite Machado
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
