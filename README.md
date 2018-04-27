@@ -18,7 +18,13 @@ Biblioteca PHP com classes auxiliares para integração com Granatum Financeiro
  - Lançamentos *(Listagem, Inclusão, Alteração, Deleção)*
 
 
+## Créditos
 
+Estas classes foram desenvolvidas com base no repositório das classes crias por Lucas Nunes Pinto Pinheiro.
+
+[lucasnpinheiro/granatum](https://github.com/lucasnpinheiro/granatum)
+
+Ao qual agradeço muito a disponibilização livre de suas classes de integração.
 
 
 **MIT License**
