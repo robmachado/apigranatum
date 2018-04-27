@@ -21,16 +21,22 @@ class Granatum
         'lancamentos' => Factories\Lancamentos::class
     ];
     
+    /**
+     * Statically calls and loads the desired class
+     * @param string $name
+     * @param array $arguments
+     * @return object
+     * @throws \Exception
+     */
     public static function __callStatic($name, $arguments)
     {
-        $name = str_replace('-', '', strtolower($name));
-        $realname = $name;
-        if (!array_key_exists($realname, self::$available)) {
+        $name = strtolower($name);
+        if (!array_key_exists($name, self::$available)) {
             throw new \Exception("Esta classe $name não foi localizada.");
         }
-        $className = self::$available[$realname];
+        $className = self::$available[$name];
         if (empty($arguments[0])) {
-            throw new \Exception('Faltam parametros');
+            throw new \Exception('Falta Connector::class passada como parametro.');
         }
         return new $className($arguments[0]);
     }
