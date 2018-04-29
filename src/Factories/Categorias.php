@@ -8,6 +8,8 @@ use ApiGranatum\Connector;
 
 class Categorias extends Factory implements FactoryInterface
 {
+    public $acats = [];
+    
     /**
      * Constructor
      * @param Connector $conn
@@ -16,5 +18,18 @@ class Categorias extends Factory implements FactoryInterface
     {
         parent::__construct($conn);
         $this->path = 'categorias';
+    }
+    
+    public function extract($std)
+    {
+        foreach($std as $cat) {
+            if (empty($cat->categorias_filhas)) {
+                $this->acats[] = [$cat->id, $cat->descricao]; 
+            } else {
+                foreach($cat->categorias_filhas as $child) {
+                    $this->extract([$child]);
+                }
+            }
+        }
     }
 }

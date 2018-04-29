@@ -123,7 +123,11 @@ class Connector
     protected function response():string
     {
         if ($this->curl->isError()) {
-            throw new \Exception("Error ". $this->curl->error_message);
+            throw new \Exception("Error: "
+                . $this->curl->error_message . " [" 
+                . $this->curl->response
+                . "]"
+            );
         }
         return $this->curl->response;
     }
