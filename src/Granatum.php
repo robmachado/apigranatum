@@ -18,7 +18,11 @@ class Granatum
         'estados' => Factories\Estados::class,
         'formaspagto' => Factories\FormasPagto::class,
         'fornecedores' => Factories\Fornecedores::class,
-        'lancamentos' => Factories\Lancamentos::class
+        'lancamentos' => Factories\Lancamentos::class,
+        'tipocustoapropriacao' => Factories\TipoCustoApropriacao::class,
+        'tipocustonivel' => Factories\TipoCustoNivel::class,
+        'tipolancamento' => Factories\TipoLancamento::class,
+        'tipodocumentofiscal' => Factories\TipoDocumentoFiscal::class,
     ];
     
     /**

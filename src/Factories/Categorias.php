@@ -24,8 +24,9 @@ class Categorias extends Factory implements FactoryInterface
     {
         foreach($std as $cat) {
             if (empty($cat->categorias_filhas)) {
-                $this->acats[] = [$cat->id, $cat->descricao]; 
+                $this->acats[] = ['child', $cat->id, $cat->descricao]; 
             } else {
+                $this->acats[] = ['group', $cat->id, $cat->descricao]; 
                 foreach($cat->categorias_filhas as $child) {
                     $this->extract([$child]);
                 }
